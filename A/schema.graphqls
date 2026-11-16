@@ -1,0 +1,17 @@
+schema {
+  query: Query
+}
+
+type Query {
+  itemPage: ItemPage!
+}
+
+type Item @shareable {
+  name: String!
+}
+
+type ItemPage {
+  items: [Item!]
+}
+
+directive @shareable repeatable on OBJECT | FIELD_DEFINITION
